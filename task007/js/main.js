@@ -80,7 +80,7 @@ let appData = {
     },
     // Расчет дохода с депозита
     checkSavings: function () {
-        if (appData.savings == truu) {
+        if (appData.savings == true) {
             let save = +prompt('Какова сума накоплений?'),
                 percent = +prompt('Под какой процент?');
 
