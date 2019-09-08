@@ -1,38 +1,37 @@
-let box = document.getElementById('box'),
-    btn = document.getElementsByTagName('button'),
-    circle = document.getElementsByClassName('circle'),
-    heart = document.querySelectorAll('.heart'),
-    oneHeart = document.querySelector('.heart'),
-    wrapper = document.querySelector('.wrapper');
-
-box.style.backgroundColor = 'blue';
-btn[1].style.borderRadius = '100%';
-
-circle[0].style.backgroundColor = 'red';
-circle[1].style.backgroundColor = 'yellow';
-circle[2].style.backgroundColor = 'green';
-
-// for (let i = 0; i < heart.length; i++) {
-//     heart[i].style.backgroundColor = 'blue';
+// function User(name, id) {
+//     this.name = name;
+//     this.id = id;
+//     this.human = true;
+//     this.hello = function() {
+//         console.log('Hello, ' + this.name + '!');
+//     };
 // }
-// heart.forEach((item, i, hearts) => {
-//     item.style.backgroundColor = 'blue';
-// });
 
-let div = document.createElement('div'),
-    text = document.createTextNode('djfls');
+// User.prototype.exit = function(name) {
+//     console.log('Пользователь ' + this.name + ' ушел!');
+// };
 
-div.classList.add('black');
+// let ivan = new User('Ivan', 13);
+// let alex = new User('Alex', 17);
 
-// div.innerHTML = '<h1>Hello world</h1>';
-div.textContent = 'hello world';
+// ivan.exit();
 
-// document.body.appendChild(div);
-// wrapper.appendChild(div);
-document.body.insertBefore(div, circle[0]);
-document.body.removeChild(circle[1]);
-wrapper.removeChild(heart[1]);
+//same code ES6
+class User {
+    constructor(name, id) {
+        this.name = name;
+        this.id = id;
+        this.human = true;
+    }
+    hello() {
+        console.log(`Hello ${this.name} !`);
+    }
+    exit() {
+        console.log(`Пользователь ${this.name} ушел!`);
+    }
+}
 
-document.body.replaceChild(btn[1], circle[1]);
+let ivan = new User('Ivan', 13);
+let alex = new User('Alex', 17);
 
-console.log(div, text);
+ivan.exit();
